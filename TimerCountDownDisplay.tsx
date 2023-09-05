@@ -5,7 +5,7 @@ type Props = {
     timerDate: Date;
 }
 
-const TierCountDownDisplay: React.FC<Props> = ({ timerDate }) => {
+const TimerCountDownDisplay: React.FC<Props> = ({ timerDate }) => {
     return (
         <View>
             <Text style={styles.timerCountDownText}>
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default TierCountDownDisplay;
+export default TimerCountDownDisplay;
