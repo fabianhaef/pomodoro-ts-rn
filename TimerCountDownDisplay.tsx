@@ -14,13 +14,14 @@ const TimerCountDownDisplay: React.FC<Props> = ({ timerDate }) => {
             </Text>
         </View>
     )
-}
+};
 
 const styles = StyleSheet.create({
     timerCountDownText: {
-        fontSize: 30,
-        fontWeight: '700',
+        fontSize: 40,
+        color: '#fff',
+        fontWeight: '800',
     }
-})
+});
 
 export default TimerCountDownDisplay;
