@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import TierCountDownDisplay from './TImerCountDownDisplay';
 
-const FOCUS_TIME_MINUTES = 0.2 * 60 * 1000
+const FOCUS_TIME_MINUTES = 2 * 60 * 1000
 const BREAK_TIME_MINUTES = 0.1 * 60 * 1000;
 
 export default function App() {
@@ -18,7 +19,10 @@ export default function App() {
     if (timerInterval !== null) {
       clearInterval(timerInterval);
     }
-  }
+  };
+
+  // create a new date object to extract minutes and seconds
+  const timerDate = new Date(timerCount);
 
   return (
     <View style={styles.container}>
@@ -26,7 +30,7 @@ export default function App() {
       <StatusBar style="auto" />
       <Button title="Start timer" onPress={startTimer} />
       <Button title="Stop timer" onPress={stopTimer} />
-      <Text>{timerCount}</Text>
+      <TierCountDownDisplay timerDate={timerDate} />
     </View>
   );
 }
